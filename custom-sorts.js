@@ -21,8 +21,19 @@ function validAnagrams(s, t) {
   return sSort === tSort;
 }
 
+function numberLengthSort(a, b) {
+  let aNumtoString = a.toString();
+  let bNumtoString = b.toString();
+
+  if (aNumtoString.length === bNumtoString.length){
+    return a - b;
+  } else {
+    return bNumtoString.length - aNumtoString.length;
+  }
+}
+
 function reverseBaseSort(arr) {
-  // Your code here
+  return arr.sort(numberLengthSort);
 }
 
 function frequencySort(arr) {
